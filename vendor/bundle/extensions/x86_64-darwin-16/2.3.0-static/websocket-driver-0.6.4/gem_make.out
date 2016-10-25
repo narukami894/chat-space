@@ -1,0 +1,20 @@
+current directory: /Users/Yakushi/projects/rails/chat-space/vendor/bundle/gems/websocket-driver-0.6.4/ext/websocket-driver
+/Users/Yakushi/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20161023-4539-wp5aee.rb extconf.rb
+Ignoring binding_of_caller-0.7.2 because its extensions are not built.  Try: gem pristine binding_of_caller --version 0.7.2
+Ignoring byebug-9.0.6 because its extensions are not built.  Try: gem pristine byebug --version 9.0.6
+Ignoring debug_inspector-0.0.2 because its extensions are not built.  Try: gem pristine debug_inspector --version 0.0.2
+Ignoring mysql2-0.4.4 because its extensions are not built.  Try: gem pristine mysql2 --version 0.4.4
+Ignoring nokogiri-1.6.8.1 because its extensions are not built.  Try: gem pristine nokogiri --version 1.6.8.1
+creating Makefile
+
+current directory: /Users/Yakushi/projects/rails/chat-space/vendor/bundle/gems/websocket-driver-0.6.4/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/Yakushi/projects/rails/chat-space/vendor/bundle/gems/websocket-driver-0.6.4/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/Yakushi/projects/rails/chat-space/vendor/bundle/gems/websocket-driver-0.6.4/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20161023-4539-iuwubw

@@ -19,10 +19,10 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/deivid-rodriguez/byebug"
   s.licenses = ["BSD-2-Clause"]
   s.required_ruby_version = Gem::Requirement.new(">= 2.0.0")
-  s.rubygems_version = "2.2.2"
+  s.rubygems_version = "2.5.1"
   s.summary = "Ruby 2.0 fast debugger - base + CLI"
 
-  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.5.1" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
