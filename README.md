@@ -10,7 +10,7 @@ ChatSpace(チャットスペース)は、サービス開発の練習のために
 
 # users
 ## association
-has_many :messages
+has_many :messages  
 has_many :groups, through: :groups_users
 
 ## table
@@ -21,7 +21,7 @@ has_many :groups, through: :groups_users
 
 # groups
 ## Association
-has_many :users, through: :groups_users
+has_many :users, through: :groups_users  
 has_many :messages
 
 # table
@@ -30,7 +30,7 @@ has_many :messages
 
 # groups_users
 ## Association
-belongs_to :groups
+belongs_to :groups  
 belongs_to :users
 
 ## table
@@ -40,7 +40,7 @@ belongs_to :users
 
 # messages
 ## Association
-belongs_to :users
+belongs_to :users  
 belongs_to :groups
 
 ## table
