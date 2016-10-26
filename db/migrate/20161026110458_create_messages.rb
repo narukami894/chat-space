@@ -5,7 +5,7 @@ class CreateMessages < ActiveRecord::Migration[5.0]
       t.string     :image
       t.references :user,  foreign_key: true
       t.references :group, foreign_key: true
-      t.timestamp
+      t.timestamps
     end
   end
 end
