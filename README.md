@@ -9,21 +9,42 @@ ChatSpace(チャットスペース)は、サービス開発の練習のために
 ## Database design
 
 # users
-* name
-* email
-* password
+## association
+has_many :messages
+has_many :groups, through: :groups_users
+
+## table
+* name :string
+* email :string, null: false, unique: true
+* password :string, null: false
+
 
 # groups
-* name
+## Association
+has_many :users, through: :groups_users
+has_many :messages
+
+# table
+* name :string
+
 
 # groups_users
-* user_id
-* group_id
+## Association
+belongs_to :groups
+belongs_to :users
+
+## table
+* user_id :integer, null: false
+* group_id :integer, null: false
+
 
 # messages
-* body
-* image
-* user_id
-* group_id
+## Association
+belongs_to :users
+belongs_to :groups
 
-
+## table
+* body :text
+* image :text
+* user_id :integer, null: false
+* group_id :integer, null: false
