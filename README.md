@@ -27,18 +27,3 @@ ChatSpace(チャットスペース)は、サービス開発の練習のために
 * group_id
 
 
-
-<!--
-
-* System dependencies
-
-* Configuration
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-
- -->
