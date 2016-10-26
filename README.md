@@ -45,6 +45,6 @@ belongs_to :group
 
 ## table
 * body :text
-* image :text
+* image :string
 * user_id :integer, null: false
 * group_id :integer, null: false
