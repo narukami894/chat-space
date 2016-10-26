@@ -30,8 +30,8 @@ has_many :messages
 
 # groups_users
 ## Association
-belongs_to :groups  
-belongs_to :users
+belongs_to :group  
+belongs_to :user
 
 ## table
 * user_id :integer, null: false
@@ -40,8 +40,8 @@ belongs_to :users
 
 # messages
 ## Association
-belongs_to :users  
-belongs_to :groups
+belongs_to :user  
+belongs_to :group
 
 ## table
 * body :text
