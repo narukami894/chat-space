@@ -7,19 +7,33 @@
     = javascript_include_tag 'application', data: { turbolinks: { track: true } }
     = csrf_meta_tags
   %body
-    / %ul.userInformation
-    /     %li.userName
-    /         やくしじ
-    /     %li
-    /         %i.fa fa-edit
-    /     %li
-    /         %i.fa fa-gear
-    .user_groups
+    .user-name
+      やくしじ
+      %i.fa fa-edit
+      %i.fa fa-cog
 
+    .user-group
+      %ul
+        %li
+          html/cssをイチから書くのしんどい人のグループ
+          てすと
+        %li
+          TECH::ADMIN
+          piyo
     .current_group
+      html/cssをイチから書くのしんどい人のグループ
+      edit
+      members: やくしじ, まるお, hoge, huga
+    .message
+      %p やくしじ
 
-    .messages
+      %p おはよう
+
+      %p まるお
+
+      %p こんばんは
 
     .message_box
-
+      = form_tag do
+        = text_field_tag :hoge
     = yield
