@@ -7,33 +7,64 @@
     = javascript_include_tag 'application', data: { turbolinks: { track: true } }
     = csrf_meta_tags
   %body
-    .user-name
-      やくしじ
-      %i.fa fa-edit
-      %i.fa fa-cog
 
-    .user-group
-      %ul
-        %li
-          html/cssをイチから書くのしんどい人のグループ
-          てすと
-        %li
-          TECH::ADMIN
-          piyo
-    .current_group
-      html/cssをイチから書くのしんどい人のグループ
-      edit
-      members: やくしじ, まるお, hoge, huga
-    .message
-      %p やくしじ
+    .chat.clearfix
+      .chatSide
+        .chatUser.clearfix
+          %h5
+            やくしじ
+          .chatUser__actions
+            %a{class: "chatUser__action"}
+              %i{class: "fa fa-pencil-square-o"}
+            %a{class: "chatUser__action"}
+              %i{class: "fa fa-cog"}
+        %ul{class: "chatGroups"}
+          %li{class: "chatGroup"}
+            %a{class: "chatGroup__link"}
+              %p{class: "chatGroup__name"}
+                html/cssをイチから書くのしんどい人のグループ
+              %p{class: "chatGroup__message"}
+                こんばんは
+          %li{class: "chatGroup"}
+            %a{class: "chatGroup__link"}
+              %p{class: "chatGroup__name"}
+                TECH::ADMIN
+              %p{class: "chatGroup__message"}
+                piyo
+      .chatMain
+        .chatHeader.clearfix
+          .chatHeader--left
+            %h2 html/cssをイチから書くのしんどい人のグループ
+            %p{class: "chatHeader__users"}
+              Members:
+              %span{class: "chatHeader__user"}
+                やくしじ
+              %span{class: "chatHeader__user"}
+                hoge
+              %span{class: "chatHeader__user"}
+                Piyo
+          .chatHeader--right
+            .chatHeader__editBtn edit
+        .chatBody
+          %ul{class: "chatMessages"}
+            %li{class: "chatMessage"}
+              .chatMessage__header.clearfix
+                %p{class: "chatMessage__name"}
+                  やくしじ
+                %p{class: "chatMessage__time"}
+                  2016/11/01 09:00:00
+              %p{class: "chatMessage__body"}
+                おはよう
+            %li{class: "chatMessage"}
+              .chatMessage__header.clearfix
+                %p{class: "chatMessage__name"}
+                  やくしじ
+                %p{class: "chatMessage__time"}
+                  2016/11/01 23:59:59
+              %p{class: "chatMessage__body"}
+                こんばんは
+        .chatFooter
+          %textarea{row: "1", placeholder: "type a message", name: "message[body]"}
+          .chatFooter__sendBtn send
 
-      %p おはよう
-
-      %p まるお
-
-      %p こんばんは
-
-    .message_box
-      = form_tag do
-        = text_field_tag :hoge
     = yield
