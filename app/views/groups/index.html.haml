@@ -1,0 +1,64 @@
+.chat.clearfix
+  .chatSide
+    .chatUser.clearfix
+      %h5
+        やくしじ
+      .chatUser__actions
+        %a{class: "chatUser__action"}
+          %i{class: "fa fa-pencil-square-o"}
+        %a{class: "chatUser__action"}
+          %i{class: "fa fa-cog"}
+    %ul{class: "chatGroups"}
+      %li{class: "chatGroup"}
+        %a{class: "chatGroup__link"}
+          %p{class: "chatGroup__name"}
+            html/cssをイチから書くのしんどい人のグループ
+          %p{class: "chatGroup__message"}
+            こんばんは
+      %li{class: "chatGroup"}
+        %a{class: "chatGroup__link"}
+          %p{class: "chatGroup__name"}
+            TECH::ADMIN
+          %p{class: "chatGroup__message"}
+            piyo
+  .chatMain
+    .chatHeader.clearfix
+      .chatHeader--left
+        %h2 html/cssをイチから書くのしんどい人のグループ
+        %p{class: "chatHeader__users"}
+          Members:
+          %span{class: "chatHeader__user"}
+            やくしじ
+          %span{class: "chatHeader__user"}
+            hoge
+          %span{class: "chatHeader__user"}
+            Piyo
+      .chatHeader--right
+        %a{class: "chatHeader__editBtn"}
+          Edit
+    .chatBody
+      %ul{class: "chatMessages"}
+        %li{class: "chatMessage"}
+          .chatMessage__header.clearfix
+            %p{class: "chatMessage__name"}
+              やくしじ
+            %p{class: "chatMessage__time"}
+              2016/11/01 09:00:00
+          %p{class: "chatMessage__body"}
+            おはよう
+        %li{class: "chatMessage"}
+          .chatMessage__header.clearfix
+            %p{class: "chatMessage__name"}
+              やくしじ
+            %p{class: "chatMessage__time"}
+              2016/11/01 23:59:59
+          %p{class: "chatMessage__body"}
+            こんばんは
+    .chatFooter
+      = form_for @message do |f|
+        .chatFooter__body
+          = f.text_area :body, placeholder: "type a message", row: "1"
+          = f.label :body do
+            = f.file_field :image
+            %i{class: "fa fa-image"}
+        = f.submit "Send"
