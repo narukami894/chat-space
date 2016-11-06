@@ -58,7 +58,9 @@
       = form_for @message do |f|
         .chatFooter__body
           = f.text_area :body, placeholder: "type a message", row: "1"
-          = f.label :body do
+          = f.label :image do
+            .chatFooter_file
             = f.file_field :image
             %i{class: "fa fa-image"}
+        .chatFooter__sendBtn
         = f.submit "Send"

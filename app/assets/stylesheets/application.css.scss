@@ -10,7 +10,6 @@ $mainWhite: #fff;
     @include clearfix();
     height: 100%;
     min-width: 980px;
-    width: 100%;
 
     .chatSide {
         background-color: #2f3e51;
@@ -50,10 +49,13 @@ $mainWhite: #fff;
             list-style: none;
             margin: 0;
             padding: 0;
+
             .chatGroup {
+
                 :hover {
                     background-color: #384a62;
                 }
+
             .chatGroup__link {
                 display: block;
                 color: $mainWhite;
@@ -63,6 +65,7 @@ $mainWhite: #fff;
                         font-size: 15px;
                         margin-bottom: 5px;
                     }
+
                     .chatGroup__message {
                         font-size: 11px;
                         overflow: hidden;
@@ -122,6 +125,7 @@ $mainWhite: #fff;
                 padding: 28px 0 0 0;
                 position: fixed;
                 right: 0;
+
                 .chatHeader__editBtn {
                     border: 2px solid;
                     color: #38aef0;
@@ -140,22 +144,27 @@ $mainWhite: #fff;
             overflow-y: scroll;
             padding: 120px 0 0 0;
             position: relative;
+
             .chatMessages {
                 list-style: none;
                 padding: 0;
                 position: relative;
                 right: 40px;
                 left: 40px;
+
                 .chatMessage {
                     margin-bottom: 40px;
+
                     .chatMessage__header {
                         display: inline-block;
                         line-height: 20px;
+
                         .chatMessage__name {
                             float: left;
                             font-weight: 600;
                             margin-bottom: 10px;
                         }
+
                         .chatMessage__time {
                           color: #aaa;
                           float: left;
@@ -171,37 +180,60 @@ $mainWhite: #fff;
             }
         }
         .chatFooter {
-
             background-color: #ddd;
-            display: inline-block;
             height: 40px;
             padding: 20px 40px;
             position: fixed;
             bottom: 0;
             width: 100%;
-            textarea {
-                border: none;
-                float: left;
-                height: 20px;
-                line-height: 20px;
-                padding: 10px;
-                resize: none;
-                width: 50%;
+
+              .new_message {
+                width: 500px;
+
+                    .chatFooter__body {
+                    float:left;
+                    width: 860px;
+
+                        textarea {
+                            border: none;
+                            float: left;
+                            height: 20px;
+                            line-height: 20px;
+                            padding: 10px;
+                            resize: none;
+                            width: 100%;
+
+                                #message-body {
+                                display: inline-block;
+                                }
+                        }
+
+                    label {
+
+                        input{
+                        display: none;
+                        }
+
+                    i {
+                    display: inline-block;
+                    float: right;
+                    margin: 12px 16px;
+                    position: absolute;
+                    }
+                  }
                 }
-            input {
-                background-color:#38aef0;
-                border: none;
-                color:#fff;
-                float: left;
-                padding: 8px;
-                #message_image {
-                    display: none;
-                }
 
-
-            }
-
-            }
-
+                input {
+                    background-color:#38aef0;
+                    border: none;
+                    color: $mainWhite;
+                    display: inline-block;
+                    margin-left: 65px;
+                    padding: 8px;
+                    position: absolute;
+                    width: 80px;
+        }
+      }
     }
+  }
 }
