@@ -44,7 +44,8 @@
               %span{class: "chatHeader__user"}
                 Piyo
           .chatHeader--right
-            .chatHeader__editBtn edit
+            %a{class: "chatHeader__editBtn"}
+              Edit
         .chatBody
           %ul{class: "chatMessages"}
             %li{class: "chatMessage"}
@@ -64,7 +65,12 @@
               %p{class: "chatMessage__body"}
                 こんばんは
         .chatFooter
-          %textarea{row: "1", placeholder: "type a message", name: "message[body]"}
-          .chatFooter__sendBtn send
+          = form_for @message do |f|
+            .chatFooter__body
+              = f.text_area :body, placeholder: "type a message", row: "1"
+              = f.label :body
+                = f.file_field :image
+                %i{class: "fa fa-image"}
+            = f.submit "Send"
 
     = yield
