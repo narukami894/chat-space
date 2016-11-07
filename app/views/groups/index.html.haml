@@ -1,23 +1,23 @@
-.chat.clearfix
+.chat
   .chatSide
-    .chatUser.clearfix
+    .chatUser
       %h5
         やくしじ
       .chatUser__actions
-        %a.chatUser__action
+        %a.chatUser__actions__action
           %i{class: "fa fa-pencil-square-o"}
-        %a.chatUser__action
+        %a.chatUser__actions__action
           %i{class: "fa fa-cog"}
     %ul.chatGroups
       %li.chatGroup
         %a.chatGroup__link
-          %p.chatGroup__name
+          %p.chatGroup__link__name
             html/cssをイチから書くのしんどい人のグループ
-          %p.chatGroup__message
+          %p.chatGroup__link__message
             こんばんは
       %li.chatGroup
         %a.chatGroup__link
-          %p.chatGroup__name
+          %p.chatGroup__link__name
             TECH::ADMIN
-          %p.chatGroup__message
+          %p.chatGroup__link__message
             piyo

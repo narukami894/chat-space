@@ -24,10 +24,8 @@ $mainWhite: #fff;
             color: $mainWhite;
             height: 60px;
             padding: 20px;
-
             &__actions {
                 float: right;
-
                 &__action {
                     color: $mainWhite;
                     font-size: 20px;
@@ -35,6 +33,7 @@ $mainWhite: #fff;
                     margin: 15px 0 15px 3px;
                   }
               }
+
             h5 {
                 float: left;
                 font-size: 16px;
@@ -42,8 +41,8 @@ $mainWhite: #fff;
                 letter-spacing: 2px;
                 line-height: 60px;
               }
-
         }
+
 
         .chatGroups {
             color: $mainWhite;
@@ -53,14 +52,14 @@ $mainWhite: #fff;
 
             .chatGroup {
 
-                :hover {
+                &:hover {
                     background-color: #384a62;
                 }
 
-            &__link {
-                display: block;
-                color: $mainWhite;
-                padding: 20px 20px;
+                &__link {
+                    display: block;
+                    color: $mainWhite;
+                    padding: 20px 20px;
 
                     &__name {
                         font-size: 15px;
@@ -127,7 +126,7 @@ $mainWhite: #fff;
                 position: fixed;
                 right: 0;
 
-                .chatHeader__editBtn {
+                &__editBtn {
                     border: 2px solid;
                     color: #38aef0;
                     font-size: 14px;
@@ -138,7 +137,6 @@ $mainWhite: #fff;
                 }
             }
         }
-
 
         .chatBody {
             height: calc(100% - 190px);
@@ -180,6 +178,7 @@ $mainWhite: #fff;
                 }
             }
         }
+
         .chatFooter {
             background-color: #ddd;
             height: 40px;
@@ -191,7 +190,7 @@ $mainWhite: #fff;
               .new_message {
                 width: 500px;
 
-                    &__body {
+                    .chatForm {
                     float:left;
                     width: 860px;
 
