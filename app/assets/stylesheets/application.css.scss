@@ -1,4 +1,4 @@
-@import "./clearfix";
+@import "./mixin";
 @import "./reset";
 
 @import "font-awesome-sprockets";
@@ -25,6 +25,16 @@ $mainWhite: #fff;
             height: 60px;
             padding: 20px;
 
+            &__actions {
+                float: right;
+
+                &__action {
+                    color: $mainWhite;
+                    font-size: 20px;
+                    line-height: 60px;
+                    margin: 15px 0 15px 3px;
+                  }
+              }
             h5 {
                 float: left;
                 font-size: 16px;
@@ -32,16 +42,7 @@ $mainWhite: #fff;
                 letter-spacing: 2px;
                 line-height: 60px;
               }
-            .chatUser__actions {
-                float: right;
 
-                .chatUser__action {
-                    color: $mainWhite;
-                    font-size: 20px;
-                    line-height: 60px;
-                    margin: 15px 0 15px 3px;
-                  }
-              }
         }
 
         .chatGroups {
@@ -56,17 +57,17 @@ $mainWhite: #fff;
                     background-color: #384a62;
                 }
 
-            .chatGroup__link {
+            &__link {
                 display: block;
                 color: $mainWhite;
                 padding: 20px 20px;
 
-                    .chatGroup__name {
+                    &__name {
                         font-size: 15px;
                         margin-bottom: 5px;
                     }
 
-                    .chatGroup__message {
+                    &__message {
                         font-size: 11px;
                         overflow: hidden;
                         text-overflow: ellipsis;
@@ -96,7 +97,7 @@ $mainWhite: #fff;
             top: 0;
             width: 100%;
 
-            .chatHeader--left {
+            &__left {
                 float: left;
                 height: 100%;
 
@@ -109,17 +110,17 @@ $mainWhite: #fff;
                 margin-top: 20px;
               }
 
-            .chatHeader__users {
+            &__users {
                 color: #999;
                 font-size: 12px;
                 line-height: 20px;
-              .chatHeader__user {
+              &__user {
                   margin-left: 3px;
                   }
               }
             }
 
-            .chatHeader--right {
+            .chatHeader__right {
                 float: right;
                 height: 99px;
                 padding: 28px 0 0 0;
@@ -155,24 +156,24 @@ $mainWhite: #fff;
                 .chatMessage {
                     margin-bottom: 40px;
 
-                    .chatMessage__header {
+                    &__header {
                         display: inline-block;
                         line-height: 20px;
 
-                        .chatMessage__name {
+                        &__name {
                             float: left;
                             font-weight: 600;
                             margin-bottom: 10px;
                         }
 
-                        .chatMessage__time {
+                        &__time {
                           color: #aaa;
                           float: left;
                           font-size: 12px;
                           margin-left: 10px;
                         }
 
-                    .chatMessage__body{
+                    &__body {
                         font-size: 14px;
                         }
                     }
@@ -190,7 +191,7 @@ $mainWhite: #fff;
               .new_message {
                 width: 500px;
 
-                    .chatFooter__body {
+                    &__body {
                     float:left;
                     width: 860px;
 
