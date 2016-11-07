@@ -175,7 +175,7 @@
                         }
 
                     &__body {
-                        font-size: 14px;
+                      font-size: 14px;
                     }
 
                     }
@@ -194,7 +194,7 @@
             .new_message {
               width: 500px;
 
-                chatForm {
+                .chatForm {
                   float:left;
                   width: 860px;
 
@@ -228,14 +228,14 @@
                 }
 
                 input {
-                    background-color:#38aef0;
-                    border: none;
-                    color: $mainWhite;
-                    display: inline-block;
-                    margin-left: 65px;
-                    padding: 8px;
-                    position: absolute;
-                    width: 80px;
+                  background-color:#38aef0;
+                  border: none;
+                  color: $mainWhite;
+                  display: inline-block;
+                  margin-left: 65px;
+                  padding: 8px;
+                  position: absolute;
+                  width: 80px;
                 }
             }
         }
