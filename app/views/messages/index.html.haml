@@ -5,9 +5,9 @@
         やくしじ
       .chatUser__actions
         %a.chatUser__actions__action
-          %i{class: "fa fa-pencil-square-o"}
+          %i.fa.fa-pencil-square-o
         %a.chatUser__actions__action
-          %i{class: "fa fa-cog"}
+          %i.fa.fa-cog
     %ul.chatGroups
       %li.chatGroup
         %a.chatGroup__link
@@ -60,5 +60,5 @@
           = f.text_area :body, placeholder: "type a message", row: "1"
           = f.label :image do
             = f.file_field :image
-            %i{class: "fa fa-image"}
+            %i.fa.fa-image
         = f.submit "Send"
