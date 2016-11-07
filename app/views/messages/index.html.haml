@@ -1,0 +1,64 @@
+.chat
+  .chatSide
+    .chatUser
+      %h5
+        やくしじ
+      .chatUser__actions
+        %a.chatUser__actions__action
+          %i.fa.fa-pencil-square-o
+        %a.chatUser__actions__action
+          %i.fa.fa-cog
+    %ul.chatGroups
+      %li.chatGroup
+        %a.chatGroup__link
+          %p.chatGroup__link__name
+            html/cssをイチから書くのしんどい人のグループ
+          %p.chatGroup__link__message
+            こんばんは
+      %li.chatGroup
+        %a.chatGroup__link
+          %p.chatGroup__link__name
+            TECH::ADMIN
+          %p.chatGroup__link__message
+            piyo
+  .chatMain
+    .chatHeader
+      .chatHeader__left
+        %h2 html/cssをイチから書くのしんどい人のグループ
+        %p.chatHeader__left__users
+          Members:
+          %span.chatHeader__left__users__user
+            やくしじ
+          %span.chatHeader__left__users__user
+            hoge
+          %span.chatHeader__left__users__user
+            Piyo
+      .chatHeader__right
+        %a.chatHeader__right__editBtn
+          Edit
+    .chatBody
+      %ul.chatMessages
+        %li.chatMessage
+          .chatMessage__header
+            %p.chatMessage__header__name
+              やくしじ
+            %p.chatMessage__header__time
+              2016/11/01 09:00:00
+          %p.chatMessage__body
+            おはよう
+        %li.chatMessage
+          .chatMessage__header
+            %p.chatMessage__header__name
+              やくしじ
+            %p.chatMessage__header__time
+              2016/11/01 23:59:59
+          %p.chatMessage__body
+            こんばんは
+    .chatFooter
+      = form_for @message do |f|
+        .chatForm
+          = f.text_area :body, placeholder: "type a message", row: "1"
+          = f.label :image do
+            = f.file_field :image
+            %i.fa.fa-image
+        = f.submit "Send"
