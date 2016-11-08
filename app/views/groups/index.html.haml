@@ -2,11 +2,11 @@
   .chatSide
     .chatUser
       %h5
-        やくしじ
+        = current_user.name
       .chatUser__actions
         %a.chatUser__actions__action
           %i.fa.fa-pencil-square-o
-        %a.chatUser__actions__action
+        = link_to edit_user_registration_path(@user), method: :get, class: "chatUser__actions__action" do
           %i.fa.fa-cog
     %ul.chatGroups
       %li.chatGroup
