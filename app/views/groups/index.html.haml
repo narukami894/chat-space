@@ -1,23 +1,11 @@
-.chat
-  .chatSide
-    .chatUser
-      %h5
-        やくしじ
-      .chatUser__actions
-        %a.chatUser__actions__action
-          %i.fa.fa-pencil-square-o
-        %a.chatUser__actions__action
-          %i.fa.fa-cog
-    %ul.chatGroups
-      %li.chatGroup
-        %a.chatGroup__link
-          %p.chatGroup__link__name
-            html/cssをイチから書くのしんどい人のグループ
-          %p.chatGroup__link__message
-            こんばんは
-      %li.chatGroup
-        %a.chatGroup__link
-          %p.chatGroup__link__name
-            TECH::ADMIN
-          %p.chatGroup__link__message
-            piyo
+.chatSide
+  .chatUser
+    %h5
+      = current_user.name
+    .chatUser__actions
+      %a.chatUser__actions__action
+        %i.fa.fa-pencil-square-o
+      = link_to edit_user_registration_path(@user), method: :get, class: "chatUser__actions__action" do
+        %i.fa.fa-cog
+  %ul.chatGroups
+    = render partial: "groups/group"
