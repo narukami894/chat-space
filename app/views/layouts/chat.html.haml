@@ -1,0 +1,22 @@
+!!!
+%html(lang="ja")
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', http: { equiv: 'Content-Type' } }/
+    %title ChatSpace
+    = stylesheet_link_tag    'application', media: 'all', data: { turbolinks: { track: true} }
+    = javascript_include_tag 'application', data: { turbolinks: { track: true } }
+    = csrf_meta_tags
+  %body
+    .chat
+      .chatSide
+        .chatUser
+          %h5
+            = current_user.name
+          .chatUser__actions
+            %a.chatUser__actions__action
+              %i.fa.fa-pencil-square-o
+            = link_to edit_user_registration_path(@user), method: :get, class: "chatUser__actions__action" do
+              %i.fa.fa-cog
+        %ul.chatGroups
+          = render partial: "groups/group"
+      = yield
