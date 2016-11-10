@@ -1,0 +1,8 @@
+.alert
+- if notice
+  %p.alert__notice
+    = notice
+- if alert
+  %p.alert__error
+    = alert
+  = devise_error_messages!
