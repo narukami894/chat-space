@@ -44,5 +44,4 @@ describe User do
       expect(user.errors[:password][0]).to include("は8文字以上で入力してください。")
     end
   end
-
 end
