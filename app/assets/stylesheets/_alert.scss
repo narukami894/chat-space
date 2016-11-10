@@ -1,0 +1,15 @@
+.alert{
+  width: 100%;
+
+    &__error {
+      background-color: #d65f4c;
+      color: #fff;
+      text-align: center;
+    }
+
+    &__notice {
+      background-color: #38aef0;
+      color: #fff;
+      text-align: center;
+    }
+}
