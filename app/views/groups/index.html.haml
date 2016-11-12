@@ -3,9 +3,9 @@
     %h5
       = current_user.name
     .chatUser__actions
-      %a.chatUser__actions__action
-        %i.fa.fa-pencil-square-o
+      = link_to new_group_path(@group), method: :get, class: "chatUser__actions__action" do
+        %i.fa.fa-edit
       = link_to edit_user_registration_path(@user), method: :get, class: "chatUser__actions__action" do
-        %i.fa.fa-cog
+        %i.fa.fa-gear
   %ul.chatGroups
     = render partial: "groups/group"
