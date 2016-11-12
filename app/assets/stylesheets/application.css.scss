@@ -3,11 +3,10 @@
 @import "./config/variables";
 @import "./mixin/mixin";
 
-@import "./alert";
-@import "./user";
-@import "./group";
-
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import "./chat"
+@import "./alert";
+@import "./chat";
+@import "./group";
+@import "./user";
