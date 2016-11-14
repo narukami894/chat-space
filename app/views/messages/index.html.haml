@@ -19,10 +19,10 @@
     %ul.chatMessages
       = render partial: "message"
   .chatFooter
-    / = form_for ([@group, @message]) do |f|
-    /   .chatForm
-    /     = f.text_area :body, placeholder: "type a message", row: "1"
-    /     = f.label :image do
-    /       = f.file_field :image
-    /       %i.fa.fa-image
-    /   = f.submit "Send"
+    = form_for ([@group, @message]) do |f|
+      .chatForm
+        = f.text_area :body, placeholder: "type a message", row: "1"
+        = f.label :image do
+          = f.file_field :image
+          %i.fa.fa-image
+      = f.submit "Send"
