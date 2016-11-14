@@ -90,6 +90,7 @@
           position: fixed;
           top: 0;
           width: 100%;
+          z-index: 1;
 
             &__left {
               float: left;
@@ -125,11 +126,18 @@
                 &__editBtn {
                   border: 2px solid;
                   color: #38aef0;
+                  display: inline-block;
                   font-size: 14px;
                   height: 30px;
-                  line-height: 40px;
-                  margin: 28px;
-                  padding: 10px 20px;
+                  line-height: 30px;
+                  margin: 1px 28px;
+                  padding: 2px 20px;
+                  text-decoration: none;
+
+                    a {
+                      text-decoration: none;
+                      color: #38aef0;
+                    }
                 }
             }
         }
