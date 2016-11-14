@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
-
   before_action :authenticate_user!
-  before_action :set_group, only: [:edit, :update]
+  before_action :set_group, only: %i(edit update)
   layout 'chat', only: :index
 
   def index
@@ -14,7 +13,7 @@ class GroupsController < ApplicationController
 
   def create
     group = Group.create(group_params)
-    redirect_to "/groups/#{group.id}/messages"
+    redirect_to group_messages_path(group.id)
   end
 
   def edit
@@ -22,7 +21,7 @@ class GroupsController < ApplicationController
 
   def update
     @group.update(group_params)
-    redirect_to "/groups/#{@group.id}/messages"
+    redirect_to group_messages_path(@group.id)
   end
 
   private
@@ -34,6 +33,4 @@ class GroupsController < ApplicationController
   def set_group
     @group = Group.find(params[:id])
   end
-
-
 end

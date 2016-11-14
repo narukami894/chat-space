@@ -5,6 +5,5 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
     @message = Message.new
     @group_id = params[:group_id]
-
   end
 end
