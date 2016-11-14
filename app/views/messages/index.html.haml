@@ -2,7 +2,8 @@
 .chatMain
   .chatHeader
     .chatHeader__left
-      %h2 html/cssをイチから書くのしんどい人のグループ
+      %h2
+        = @group.name
       %p.chatHeader__left__users
         Members:
         %span.chatHeader__left__users__user
@@ -12,8 +13,8 @@
         %span.chatHeader__left__users__user
           Piyo
     .chatHeader__right
-      %a.chatHeader__right__editBtn
-        Edit
+      .chatHeader__right__editBtn
+        = link_to "Edit", edit_group_path(@group_id)
   .chatBody
     %ul.chatMessages
       = render partial: "message"
