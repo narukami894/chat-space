@@ -1,13 +1,5 @@
 .chatGroupForm
   %h1 新規チャットグループ
-  - if @group.errors.any?
-    .chatGroupForm__errors
-      %h2
-        = @group.errors.count do "件のエラーがあります。"
-          .ul
-          = @product.errors.full_messages.each do |msg|
-            .li
-              = msg
   = form_for @group do |f|
     .chatGroupForm__field
       .chatGroupForm__field--left
