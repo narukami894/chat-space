@@ -1,0 +1,18 @@
+.chatGroupForm
+  %h1 チャットグループ編集
+  = form_for @group do |f|
+    .chatGroupForm__field
+      .chatGroupForm__field--left
+        = f.label :name, "グループ名"
+      .chatGroupForm__field--right
+        = f.text_field :name, placeholder: "新しいグループ名を入力してください", row:1, value: @group.name
+    .chatGroupForm__field
+      .chatGroupForm__field--left
+        = f.label "チャットメンバー"
+      .chatGroupForm__field--right
+        .chat-group-user
+          %p.chat-group-user__name seo_kyohei
+    .chatGroupForm__field
+      .chatGroupForm__field--right
+        .chatGroupForm__field--right__btn
+          = f.submit "Save"

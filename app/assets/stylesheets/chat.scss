@@ -1,0 +1,244 @@
+.chat {
+  @include clearfix();
+  height: 100%;
+  min-width: 980px;
+
+    .chatSide {
+      background-color: #2f3e51;
+      float: left;
+      min-height: 700px;
+      height: 100%;
+      width: 300px;
+
+        .chatUser {
+          @include clearfix();
+          background-color: #253141;
+          color: $mainWhite;
+          height: 60px;
+          padding: 20px;
+
+            &__actions {
+              float: right;
+
+                &__action {
+                  color: $mainWhite;
+                  font-size: 20px;
+                  line-height: 60px;
+                  margin: 15px 0 15px 3px;
+                  text-decoration: none;
+                }
+            }
+
+            h5 {
+              float: left;
+              font-size: 16px;
+              font-weight: 800;
+              letter-spacing: 2px;
+              line-height: 60px;
+            }
+        }
+
+        .chatGroups {
+          color: $mainWhite;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+            .chatGroup {
+
+                &:hover {
+                  background-color: #384a62;
+                }
+
+                &__link {
+                  display: block;
+                  color: $mainWhite;
+                  padding: 20px 20px;
+
+                    &__name {
+                      font-size: 15px;
+                      margin-bottom: 5px;
+                    }
+
+                    &__message {
+                      font-size: 11px;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      -o-text-overflow: ellipsis;
+                      -webkit-text-overflow: ellipsis;
+                      white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .chatMain {
+      float: right;
+      min-height: 700px;
+      position: relative;
+      width: calc(100% - 300px);
+
+        .chatHeader {
+          @include clearfix();
+          background-color: $mainWhite;
+          border-bottom: 1px solid #eee;
+          height: 99px;
+          padding-right: 40px;
+          padding-left: 40px;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 1;
+
+            &__left {
+              float: left;
+              height: 100%;
+
+                h2 {
+                  color: #333;
+                  font-size: 20px;
+                  font-weight: 400;
+                  letter-spacing: 2px;
+                  line-height: 50px;
+                  margin-top: 20px;
+                }
+
+                &__users {
+                  color: #999;
+                  font-size: 12px;
+                  line-height: 20px;
+
+                    &__user {
+                      margin-left: 3px;
+                    }
+                }
+            }
+
+            &__right {
+              float: right;
+              height: 99px;
+              padding: 28px 0 0 0;
+              position: fixed;
+              right: 0;
+
+                &__editBtn {
+                  border: 2px solid;
+                  color: #38aef0;
+                  display: inline-block;
+                  font-size: 14px;
+                  height: 30px;
+                  line-height: 30px;
+                  margin: 1px 28px;
+                  padding: 2px 20px;
+                  text-decoration: none;
+
+                    a {
+                      text-decoration: none;
+                      color: #38aef0;
+                    }
+                }
+            }
+        }
+
+        .chatBody {
+          height: calc(100% - 190px);
+          overflow-y: scroll;
+          padding: 120px 0 0 0;
+          position: relative;
+
+            .chatMessages {
+              list-style: none;
+              padding: 0;
+              position: relative;
+              right: 40px;
+              left: 40px;
+
+                .chatMessage {
+                  margin-bottom: 40px;
+
+                    &__header {
+                      display: inline-block;
+                      line-height: 20px;
+
+                        &__name {
+                          float: left;
+                          font-weight: 600;
+                          margin-bottom: 10px;
+                        }
+
+                        &__time {
+                          color: #aaa;
+                          float: left;
+                          font-size: 12px;
+                          margin-left: 10px;
+                        }
+
+                    &__body {
+                      font-size: 14px;
+                    }
+
+                    }
+                }
+            }
+        }
+
+        .chatFooter {
+          background-color: #ddd;
+          bottom: 0;
+          height: 40px;
+          padding: 20px 40px;
+          position: fixed;
+          width: 100%;
+
+            .new_message {
+              width: 500px;
+
+                .chatForm {
+                  float:left;
+                  width: 860px;
+
+                    textarea {
+                      border: none;
+                      float: left;
+                      height: 20px;
+                      line-height: 20px;
+                      padding: 10px;
+                      resize: none;
+                      width: 100%;
+
+                        #message-body {
+                          display: inline-block;
+                        }
+                    }
+
+                    label {
+
+                        input {
+                          display: none;
+                        }
+
+                        i {
+                          display: inline-block;
+                          float: right;
+                          margin: 12px 14px;
+                          position: absolute;
+                        }
+                    }
+                }
+
+                input {
+                  background-color:#38aef0;
+                  border: none;
+                  color: $mainWhite;
+                  display: inline-block;
+                  margin-left: 65px;
+                  padding: 8px;
+                  position: absolute;
+                  width: 80px;
+                }
+            }
+        }
+    }
+}
