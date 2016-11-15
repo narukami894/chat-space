@@ -4,7 +4,8 @@ class GroupsController < ApplicationController
   layout 'chat', only: :index
 
   def index
-    @groups = Group.order('id desc')
+    user = current_user
+    @groups = user.groups.order('id desc')
   end
 
   def new
