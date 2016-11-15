@@ -81,7 +81,7 @@
       min-height: 700px;
       position: relative;
       width: calc(100% - 300px);
-      z-index: -4;
+      z-index: 1;
 
         .chatHeader {
           @include clearfix();
