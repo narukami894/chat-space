@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   layout 'chat', only: :index
 
   def index
-    @group = Group.new
+    @groups = Group.order('id desc')
   end
 
   def new
@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
 
   def create
     group = Group.create(group_params)
-    redirect_to group_messages_path(group.id)
+    redirect_to group_messages_path(group.id), notice: 'チャットグループが作成されました'
   end
 
   def edit
@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
 
   def update
     @group.update(group_params)
-    redirect_to group_messages_path(@group.id)
+    redirect_to group_messages_path(@group.id), notice: 'チャットグループが更新されました'
   end
 
   private

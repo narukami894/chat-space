@@ -1,5 +1,6 @@
 .alert{
   width: 100%;
+  z-index: 2;
 
     &__error {
       background-color: #d65f4c;
