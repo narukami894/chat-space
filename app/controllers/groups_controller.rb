@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @user = User.all
   end
 
   def create
@@ -27,7 +28,7 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:title, { user_ids: [] })
   end
 
   def set_group
