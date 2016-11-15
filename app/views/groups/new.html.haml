@@ -1,6 +1,6 @@
 .chatGroupForm
   %h1 新規チャットグループ
-  = form_for(@group) do |f|
+  = form_for @group do |f|
     .chatGroupForm__field
       .chatGroupForm__field--left
         = f.label :title, "グループ名"
