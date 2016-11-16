@@ -3,8 +3,7 @@ class MessagesController < ApplicationController
   layout 'chat'
   def index
     @users = User.all
-    user = current_user
-    @groups = user.groups.order('id desc')
+    @groups = current_user.groups.order('id desc')
     @group = Group.find(params[:group_id])
     @message = Message.new
     @group_id = params[:group_id]
