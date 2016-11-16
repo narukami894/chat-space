@@ -3,15 +3,12 @@
   .chatHeader
     .chatHeader__left
       %h2
-        = @group.name
+        = @group.title
       %p.chatHeader__left__users
         Members:
-        %span.chatHeader__left__users__user
-          やくしじ
-        %span.chatHeader__left__users__user
-          hoge
-        %span.chatHeader__left__users__user
-          Piyo
+        - @group.users.each do |g|
+          %span.chatHeader__left__users__user
+            = g.name
     .chatHeader__right
       .chatHeader__right__editBtn
         = link_to "Edit", edit_group_path(@group_id)

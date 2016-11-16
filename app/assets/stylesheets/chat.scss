@@ -6,8 +6,9 @@
     .chatSide {
       background-color: #2f3e51;
       float: left;
-      min-height: 700px;
       height: 100%;
+      min-height: 700px;
+      overflow-y: scroll;
       width: 300px;
 
         .chatUser {
@@ -54,6 +55,7 @@
                   display: block;
                   color: $mainWhite;
                   padding: 20px 20px;
+                  text-decoration: none;
 
                     &__name {
                       font-size: 15px;
@@ -79,6 +81,7 @@
       min-height: 700px;
       position: relative;
       width: calc(100% - 300px);
+      z-index: 1;
 
         .chatHeader {
           @include clearfix();
@@ -87,10 +90,9 @@
           height: 99px;
           padding-right: 40px;
           padding-left: 40px;
-          position: fixed;
+          position: relative;
           top: 0;
           width: 100%;
-          z-index: 1;
 
             &__left {
               float: left;
@@ -145,7 +147,7 @@
         .chatBody {
           height: calc(100% - 190px);
           overflow-y: scroll;
-          padding: 120px 0 0 0;
+          padding: 20px 0 0 0;
           position: relative;
 
             .chatMessages {

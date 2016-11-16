@@ -71,6 +71,11 @@
               box-sizing: border-box;
             }
 
+            label {
+              float: left;
+              width: 70px;
+            }
+
             &__btn {
 
                 input {

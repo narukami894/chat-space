@@ -3,15 +3,15 @@
   = form_for @group do |f|
     .chatGroupForm__field
       .chatGroupForm__field--left
-        = f.label :name, "グループ名"
+        = f.label :title, "グループ名"
       .chatGroupForm__field--right
-        = f.text_field :name, placeholder: "新しいグループ名を入力してください", row:1, value: @group.name
+        = f.text_field :title, placeholder: "新しいグループ名を入力してください", row:1, value: @group.title
     .chatGroupForm__field
       .chatGroupForm__field--left
-        = f.label "チャットメンバー"
+        = f.label :users, "チャットメンバー"
       .chatGroupForm__field--right
-        .chat-group-user
-          %p.chat-group-user__name seo_kyohei
+        = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
+          = b.label { b.check_box + b.text }
     .chatGroupForm__field
       .chatGroupForm__field--right
         .chatGroupForm__field--right__btn

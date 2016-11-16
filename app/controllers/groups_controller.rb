@@ -4,16 +4,17 @@ class GroupsController < ApplicationController
   layout 'chat', only: :index
 
   def index
-    @group = Group.new
+    @groups = current_user.groups.newly
   end
 
   def new
     @group = Group.new
+    @users = User.all
   end
 
   def create
     group = Group.create(group_params)
-    redirect_to group_messages_path(group.id)
+    redirect_to group_messages_path(group), notice: 'チャットグループが作成されました'
   end
 
   def edit
@@ -21,13 +22,13 @@ class GroupsController < ApplicationController
 
   def update
     @group.update(group_params)
-    redirect_to group_messages_path(@group.id)
+    redirect_to group_messages_path(@group), notice: 'チャットグループが更新されました'
   end
 
   private
 
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:title, { user_ids: [] })
   end
 
   def set_group
