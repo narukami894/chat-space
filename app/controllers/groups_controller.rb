@@ -14,7 +14,11 @@ class GroupsController < ApplicationController
 
   def create
     group = Group.create(group_params)
-    redirect_to group_messages_path(group), notice: 'チャットグループが作成されました'
+      unless group.save
+        redirect_to new_group_path, alert: 'グループ名を入力してください'
+      else
+        redirect_to group_messages_path(group), notice: 'チャットグループが作成されました'
+      end
   end
 
   def edit
@@ -22,7 +26,11 @@ class GroupsController < ApplicationController
 
   def update
     @group.update(group_params)
-    redirect_to group_messages_path(@group), notice: 'チャットグループが更新されました'
+      unless @group.save
+        redirect_to edit_group_path(@group), alert: 'グループ名を入力してください'
+      else
+        redirect_to group_messages_path(@group), notice: 'チャットグループが更新されました'
+      end
   end
 
   private

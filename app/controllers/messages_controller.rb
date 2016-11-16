@@ -12,8 +12,12 @@ class MessagesController < ApplicationController
 
   def create
     group = Group.find(params[:group_id])
-    Message.create(message_params)
-    redirect_to group_messages_path
+    @message = Message.create(message_params)
+      unless @message.save
+        redirect_to group_messages_path, alert: 'メッセージが空では投稿できません'
+      else
+        redirect_to group_messages_path
+      end
   end
 
   private
