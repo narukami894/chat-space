@@ -48,6 +48,10 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'faker'
+end
+
   gem 'devise'
   gem 'haml-rails'
   gem 'erb2haml'
