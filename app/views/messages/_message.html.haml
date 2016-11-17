@@ -5,6 +5,6 @@
         %p.chatMessage__header__name
           = message.user.name
         %p.chatMessage__header__time
-          = message.updated_at.strftime("%Y-%m-%d %H:%M:%S")
+          = message.time
       %p.chatMessage__body
         = message.body
