@@ -5,7 +5,7 @@
       .chatGroupForm__field--left
         = f.label :title, "グループ名"
       .chatGroupForm__field--right
-        = f.text_field :title, placeholder: "グループ名を入力してください", row:1
+        = f.text_field :title, placeholder: "グループ名を入力してください", row:1, requied: "", aria: {requied: "true"}
     .chatGroupForm__field
       .chatGroupForm__field--left
         = f.label :users, "チャットメンバー"
