@@ -1,12 +1,12 @@
 - if @groups.present?
-  - @groups.each do |g|
+  - @groups.each do |group|
     %li.chatGroup
-      = link_to group_messages_path(g), class: "chatGroup__link" do
+      = link_to group_messages_path(group), class: "chatGroup__link" do
         %p.chatGroup__link__name
-          = g.title
+          = group.title
         %p.chatGroup__link__message
-          - if g.messages.present?
-            = g.messages.last.body
+          - if group.messages.present?
+            = group.last_message
           - else
             まだメッセージがありません。
 - else

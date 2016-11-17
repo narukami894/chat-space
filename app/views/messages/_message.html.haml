@@ -1,10 +1,10 @@
 - if @messages.present?
-  - @messages.each do |m|
+  - @messages.each do |message|
     %li.chatMessage
       .chatMessage__header
         %p.chatMessage__header__name
-          = m.user.name
+          = message.user.name
         %p.chatMessage__header__time
-          = m.updated_at
+          = message.updated_at
       %p.chatMessage__body
-        = m.body
+        = message.body

@@ -5,4 +5,8 @@ class Group < ApplicationRecord
   scope :newly, -> { order(id: :desc) }
   validates :title, presence: true
   accepts_nested_attributes_for :group_users
+
+  def last_message
+    last_message = messages.last.body
+  end
 end
