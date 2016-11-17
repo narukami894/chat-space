@@ -5,7 +5,10 @@
         %p.chatGroup__link__name
           = group.title
         %p.chatGroup__link__message
-          こんばんは
+          - if group.messages.present?
+            = group.last_message
+          - else
+            まだメッセージがありません。
 - else
   %li.chatGroup
     = link_to new_group_path, class: "chatGroup__link" do

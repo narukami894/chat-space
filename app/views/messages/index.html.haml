@@ -6,9 +6,9 @@
         = @group.title
       %p.chatHeader__left__users
         Members:
-        - @group.users.each do |g|
+        - @group.users.each do |group|
           %span.chatHeader__left__users__user
-            = g.name
+            = group.name
     .chatHeader__right
       .chatHeader__right__editBtn
         = link_to "Edit", edit_group_path(@group_id)
