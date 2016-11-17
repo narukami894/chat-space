@@ -13,9 +13,9 @@ class GroupsController < ApplicationController
   end
 
   def create
-    group = Group.create(group_params)
-      if group.save
-        redirect_to group_messages_path(group), notice: 'チャットグループが作成されました'
+    @group = Group.new(group_params)
+      if @group.save
+        redirect_to group_messages_path(@group), notice: 'チャットグループが作成されました'
       else
         redirect_to new_group_path, alert: 'グループ名を入力してください'
       end
