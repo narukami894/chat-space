@@ -41,7 +41,7 @@ RSpec.describe MessagesController, type: :controller do
   describe 'POST #create' do
     it 'データベースに新しい情報が保存される' do
       group = create(:group)
-      expect{
+      expect {
         post :create, group_id: group.id, message: attributes_for(:message)
       }.to change(Message, :count).by(1)
     end
@@ -50,6 +50,13 @@ RSpec.describe MessagesController, type: :controller do
       group = create(:group)
       post :create, group_id: group.id, message: attributes_for(:message)
       expect(response).to redirect_to group_messages_path
+    end
+
+    it '本文が空だとデータベースに保存されない' do
+      group = create(:group)
+      expect {
+        post :create, group_id: group.id, message: attributes_for(:message, body: nil)
+      }.not_to change(Message, :count)
     end
   end
 end
