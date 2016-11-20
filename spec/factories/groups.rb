@@ -5,7 +5,7 @@ FactoryGirl.define do
     created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
 
     after(:create) do |group|
-      create(:group_user, group: group, user: create(:user))
+      create(:group_user, group: group, user: User.first )
     end
   end
 
