@@ -15,7 +15,7 @@ RSpec.describe MessagesController, type: :controller do
       allow(controller).to receive(:current_user).and_return(@user)
       groups = create_list(:group, 2)
       get :index, group_id: groups.first.id
-      expect(assigns(:groups)).to match(groups.sort{|a, b| b.id <=> a.id })
+      expect(assigns(:groups)).to match(groups.sort{|a, b| b.created_at <=> a.created_at })
     end
 
     it '@groupが正常な値になる' do
