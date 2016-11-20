@@ -8,16 +8,4 @@ FactoryGirl.define do
       create(:group_user, group: group, user: User.first )
     end
   end
-
-  factory :user do
-    name                 { Faker::Lorem.word }
-    email                { Faker::Internet.email }
-    password              "00000000"
-    password_confirmation "00000000"
-  end
-
-  factory :group_user do
-    group
-    user
-  end
 end
