@@ -11,7 +11,7 @@
             = group.name
     .chatHeader__right
       .chatHeader__right__editBtn
-        = link_to "Edit", edit_group_path(@group_id)
+        = link_to "Edit", edit_group_path(@group)
   .chatBody
     %ul.chatMessages
       = render partial: "message"
