@@ -11,17 +11,13 @@ class MessagesController < ApplicationController
   def create
     group = Group.find(params[:group_id])
     @message = Message.create(message_params)
-    if @message.save
-    #     respond_to do |format|
-    #       format.json {
-    #       render json: { id: name: }
-    #       }
-    end
-    #  redirect_to group_messages_path
-    else
-    #  redirect_to group_messages_path, alert: 'メッセージが空では投稿できません'
-    end
 
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: { name: @message.user.name,  body: @message.text, created_at: @message.created_at }
+      }
+      end
   end
 
   private
