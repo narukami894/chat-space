@@ -11,9 +11,8 @@ class MessagesController < ApplicationController
   def create
     group = Group.find(params[:group_id])
     message = Message.new(message_params)
-    if message.save
-      respond_to do |format|
-
+    respond_to do |format|
+      if message.save
         format.html
         format.json do
           render json: {
@@ -22,9 +21,9 @@ class MessagesController < ApplicationController
                           created_at: message.display_time
                         }
         end
+      else
+        redirect_to group_messages_path, alert: 'メッセージが空では投稿できません'
       end
-    else
-      redirect_to group_messages_path, alert: 'メッセージが空では投稿できません'
     end
   end
 
