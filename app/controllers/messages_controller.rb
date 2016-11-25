@@ -18,8 +18,8 @@ class MessagesController < ApplicationController
           render json: {
                           body: message.body,
                           name: message.user.name,
-                          created_at: message.display_time
-                        }
+                          time: message.display_time
+                }
         end
       else
         redirect_to group_messages_path, alert: 'メッセージが空では投稿できません'
