@@ -1,5 +1,26 @@
 $(function(){
 
+  function messages(data){
+
+    var message = $(
+    "<li class='chatMessage'>" +
+      "<div class= 'chatMessage__header'>" +
+        "<p class= 'chatMessage__header__name'>" +
+          data.name +
+        "</p>" +
+        "<p class= 'chatMessage__header__time'>" +
+          data.created_at +
+        "</p>" +
+      "</div>" +
+      "<p class='chatMessage__body'>" +
+      data.body +
+      "</p>" +
+    "</li>" );
+
+    return message;
+  };
+
+
   $('form#new_message').submit(function(e) {
     e.preventDefault();
     $.ajax({
@@ -10,9 +31,7 @@ $(function(){
     })
 
     .done(function(data) {
-      $('.chatMessage__header__name').append(data.name);
-      $('.chatMessage__header__time').append(data.created_at);
-      $('.chatMessage__body').append(data.body);
+      $('.chatMessages').append(messages(data));
     })
     .fail(function(data) {
     });
