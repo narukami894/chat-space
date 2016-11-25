@@ -1,15 +1,13 @@
-$(function(){
+function messages(data){
 
-  function messages(data){
-
-    var message = $(
+  var message = $(
     "<li class='chatMessage'>" +
       "<div class= 'chatMessage__header'>" +
         "<p class= 'chatMessage__header__name'>" +
           data.name +
         "</p>" +
         "<p class= 'chatMessage__header__time'>" +
-          data.created_at +
+          data.time +
         "</p>" +
       "</div>" +
       "<p class='chatMessage__body'>" +
@@ -20,6 +18,7 @@ $(function(){
     return message;
   };
 
+$(function(){
 
   $('form#new_message').submit(function(e) {
     e.preventDefault();
@@ -32,6 +31,7 @@ $(function(){
 
     .done(function(data) {
       $('.chatMessages').append(messages(data));
+      $('#message_body').val('');
     })
     .fail(function(data) {
     });
