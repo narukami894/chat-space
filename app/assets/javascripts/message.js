@@ -1,4 +1,4 @@
-function messages(data){
+function message_html(data){
 
   var message = $(
     "<li class='chatMessage'>" +
@@ -30,7 +30,7 @@ $(function(){
     })
 
     .done(function(data) {
-      $('.chatMessages').append(messages(data));
+      $('.chatMessages').append(message_html(data));
       $('#message_body').val('');
     })
     .fail(function(data) {
