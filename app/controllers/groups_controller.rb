@@ -10,6 +10,12 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
     @users = User.all
+
+
+
+
+
+
   end
 
   def create
@@ -22,6 +28,10 @@ class GroupsController < ApplicationController
   end
 
   def edit
+
+
+
+
   end
 
   def update
