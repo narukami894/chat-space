@@ -8,10 +8,14 @@
         = f.text_field :title, placeholder: "グループ名を入力してください", row:1, requied: "true"
     .chatGroupForm__field
       .chatGroupForm__field--left
-        = f.label :users, "チャットメンバー"
+        = f.label "チャットメンバー追加"
       .chatGroupForm__field--right
-        = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
-          = b.label { b.check_box + b.text }
+        = f.text_field :users, placeholder: "追加したいユーザー名を入力してください", row:1, requied: "true", value:''
+    .chatGroupForm__field
+      .chatGroupForm__field--left
+        = f.label "チャットメンバー"
+      .chatGroupForm__field--right
+        
     .chatGroupForm__field
       .chatGroupForm__field--right
         .chatGroupForm__field--right__btn
