@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :groups, except: %i(destroy show) do
     resources :messages, only: %i(index create)
   end
+  resources :users, only: :index
 end
