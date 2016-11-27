@@ -1,6 +1,13 @@
-// var users = []
+function result_html(data){
 
+  var result = $(
+    "<li class='searchResult__name'>" +
+      data.name +
+    "</li>"
+    );
 
+  return result
+};
 
 
 $(function(){
@@ -11,19 +18,12 @@ $(function(){
     $.ajax({
       url: '/users',
       type: 'GET',
-      data: { name: $('input#group_users').val() },
+      data: { names: $('input#group_users').val() },
       dataType: 'json'
     })
 
-
-
-
-
-
-
-
     .done(function(data) {
-      $('.chatGroupForm__field--right__users__user').append('<p>てすと</p>');
+      $('#searchResult').append(result_html(data));
     })
     .fail(function(data) {
     });

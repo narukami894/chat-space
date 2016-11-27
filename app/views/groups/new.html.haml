@@ -10,8 +10,8 @@
       .chatGroupForm__field--left
         = f.label "チャットメンバー追加"
       .chatGroupForm__field--right
-        = f.text_field :users, placeholder: "追加したいユーザー名を入力してください", row:1, requied: "true", value:'' do
-          #searchResult
+        = f.text_field :users, placeholder: "追加したいユーザー名を入力してください", row:1, requied: "true", value:''
+        %ul#searchResult
     .chatGroupForm__field
       .chatGroupForm__field--left
         = f.label "チャットメンバー"

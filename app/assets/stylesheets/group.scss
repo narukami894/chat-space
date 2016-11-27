@@ -38,6 +38,12 @@
           float: right;
           width: 65%;
 
+            #searchResult {
+              line-height: 48px;
+              padding: 0 2px;
+            }
+
+
             &__users {
 
                 &__user {
