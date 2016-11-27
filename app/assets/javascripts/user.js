@@ -18,7 +18,7 @@ $(function(){
     $.ajax({
       url: '/users',
       type: 'GET',
-      data: { names: $('input#group_users').val() },
+      data: { users: $('input#group_users').val() },
       dataType: 'json'
     })
 
