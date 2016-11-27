@@ -10,12 +10,17 @@
       .chatGroupForm__field--left
         = f.label "チャットメンバー追加"
       .chatGroupForm__field--right
-        = f.text_field :users, placeholder: "追加したいユーザー名を入力してください", row:1, requied: "true", value:''
+        = f.text_field :users, placeholder: "追加したいユーザー名を入力してください", row:1, requied: "true", value:'' do
+          #searchResult
     .chatGroupForm__field
       .chatGroupForm__field--left
         = f.label "チャットメンバー"
       .chatGroupForm__field--right
-        
+        .chatGroupForm__field--right__users
+          .chatGroupForm__field--right__users__user
+            / hiddenでユーザのIDいれる
+            = current_user.name
+            / この下にインクリメンタルサーチで追加
     .chatGroupForm__field
       .chatGroupForm__field--right
         .chatGroupForm__field--right__btn
