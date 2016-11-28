@@ -11,16 +11,17 @@
         = f.label "チャットメンバー追加"
       .chatGroupForm__field--right
         = f.text_field :users, placeholder: "追加したいユーザー名を入力してください", row:1, requied: "true", value:''
-        %ul#searchResult
+        #searchResult
+          / ここに検索結果のユーザ名＋追加ボタン
     .chatGroupForm__field
       .chatGroupForm__field--left
         = f.label "チャットメンバー"
       .chatGroupForm__field--right
         .chatGroupForm__field--right__users
-          .chatGroupForm__field--right__users__user
-            / hiddenでユーザのIDいれる
+          .chatGroupForm__field--right__users__user{ id: "#{}" }
+            / hiddenかなんかでユーザのIDいれる
             = current_user.name
-            / この下にインクリメンタルサーチで追加
+            / 追加したユーザー、削除ボタン
     .chatGroupForm__field
       .chatGroupForm__field--right
         .chatGroupForm__field--right__btn

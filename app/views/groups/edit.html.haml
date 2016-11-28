@@ -16,8 +16,9 @@
         = f.label "チャットメンバー"
       .chatGroupForm__field--right
         %ul.chatGroupForm__field--right__users
-          %li.chatGroupForm__field--right__users__user
-          
+          - @group.users.each do |user|
+            %li.chatGroupForm__field--right__users__user
+              = user.name
     .chatGroupForm__field
       .chatGroupForm__field--right
         .chatGroupForm__field--right__btn
