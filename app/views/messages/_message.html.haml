@@ -8,3 +8,4 @@
           = message.display_time
       %p.chatMessage__body
         = message.body
+        = image_tag message.image.to_s if message.image.present?

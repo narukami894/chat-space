@@ -18,7 +18,8 @@ class MessagesController < ApplicationController
           render json: {
                           body: message.body,
                           name: message.user.name,
-                          time: message.display_time
+                          time: message.display_time,
+                          image: message.image
                 }
         end
       else

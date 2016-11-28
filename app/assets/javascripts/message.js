@@ -20,6 +20,10 @@ function message_html(data){
 
 $(function(){
 
+  $('#message_image').on('change', function(){
+    $('form#new_message').submit();
+  });
+
   $('form#new_message').submit(function(e) {
     e.preventDefault();
     $.ajax({
