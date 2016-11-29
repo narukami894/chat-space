@@ -1,5 +1,6 @@
 function result_html(data){
 
+
   var result = $(
                   "<div>" +
                     "<input type='hidden'>" +
@@ -16,21 +17,23 @@ function result_html(data){
   return result;
 };
 
+
+
 function ajaxSearch() {
 
   $.ajax({
-    url: '/users',
+    url: '/users.json',
     type: 'GET',
-    data: { name: $('input#group_users').val() } ,
+    data: { name: $('#group_users').val() } ,
     dataType: 'json'
   })
-  .done(function(data){
-    console.log(data);
-    data.forEach(function(){
+  .done(function(json){
+    // console.log(data);
+    json.forEach(function(data){
       $('#searchResult').append(result_html(data));
     });
   })
-  .fail(function(data){
+  .fail(function(json){
   });
 }
 
