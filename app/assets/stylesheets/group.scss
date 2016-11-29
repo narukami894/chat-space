@@ -43,6 +43,22 @@
               padding: 0 2px;
             }
 
+            .searchResult {
+              border-bottom: 1px solid #ddd;
+              display: block;
+              width: 100%;
+
+                &__name {
+
+                    &__addbtn {
+                      color: #38aef0;
+                      cursor: pointer;
+                      display: block;
+                      float: right;
+                      width: 10%;
+                    }
+                }
+            }
 
             &__users {
 
@@ -77,9 +93,13 @@
                 }
             }
 
+
+
+
+
             .chat-group-user {
               @include clearfix();
-              border-bottom: 1px solid #ddd;
+
               padding: 0 15px;
               line-height: 50px;
               font-size: 14px;
@@ -91,11 +111,8 @@
                 &__btn {
                   float: right;
                   display: inline-block;
-                  cursor: pointer;
 
-                    &--add {
-                      color: #38aef0;
-                    }
+
 
                     &--remove {
                       color: #f05050;

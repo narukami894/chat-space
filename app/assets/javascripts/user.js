@@ -2,20 +2,32 @@ function result_html(data){
 
 
   var result = $(
-                  "<div>" +
+                  "<div class='searchResult'>" +
                     "<input type='hidden'>" +
 
                     "<p class='searchResult__name'>" +
                       data.name +
-                    "</p>" +
-                    "<a>" +
-
+                    "<a class='searchResult__name__addbtn'>" +
+                      '追加' +
                     "</a>" +
+                     "</p>" +
                   "</div>"
                 );
 
   return result;
 };
+
+function add_html(data){
+
+  var add = $(
+                "<li>" +
+                  data.name +
+                "</li>" 
+               )
+  return add;
+};
+
+
 
 
 
@@ -28,9 +40,8 @@ function ajaxSearch() {
     dataType: 'json'
   })
   .done(function(json){
-    // console.log(data);
     json.forEach(function(data){
-      $('#searchResult').append(result_html(data));
+      $('#searchResult').html(result_html(data));
     });
   })
   .fail(function(json){
@@ -47,9 +58,10 @@ $(function(){
 
 
 // 追加ボタン
-//   $().on('click', '', function(){
+  $('searchResult__name__addbtn').on('click', function(){
+    $('.chatGroupForm__field--right__users').append("")
 
-//   });
+  });
 
 // 削除ボタン
 //   $().on('click', '', function(){
