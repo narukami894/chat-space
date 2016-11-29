@@ -1,10 +1,9 @@
 function message_html(data){
 
+  var image = '';
   if (data.image) {
     var image = '<br><img src="' + data.image + '">';
-  } else {
-    var image = '';
-    };
+  }
 
   var message = $(
     "<li class='chatMessage'>" +
@@ -27,7 +26,6 @@ function message_html(data){
   };
 
 $(function(){
-
   $('#message_image').on('change', function(){
     $(this).parents('form#new_message').submit();
   });
@@ -35,12 +33,12 @@ $(function(){
   $('form#new_message').submit(function(e) {
     e.preventDefault();
 
-    var fd = new FormData($('form#new_message').get(0));
+    var sentmessage = new FormData($('form#new_message').get(0));
 
     $.ajax({
       url: './messages.json',
       type: 'POST',
-      data: fd,
+      data: sentmessage,
       processData: false,
       contentType: false,
       dataType: 'json'
