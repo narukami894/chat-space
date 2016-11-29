@@ -27,17 +27,17 @@ $(function(){
   $('form#new_message').submit(function(e) {
     e.preventDefault();
     $.ajax({
-      url: './messages',
+      url: './messages.json',
       type: 'POST',
       data: { message: { body: $('#message_body').val() } },
       dataType: 'json'
     })
 
-    .done(function(data) {
-      $('.chatMessages').append(message_html(data));
+    .done(function(json) {
+      $('.chatMessages').append(message_html(json));
       $('#message_body').val('');
     })
-    .fail(function(data) {
+    .fail(function(json) {
     });
 
   });
