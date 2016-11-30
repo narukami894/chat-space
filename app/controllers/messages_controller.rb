@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
                           body: message.body,
                           name: message.user.name,
                           time: message.display_time,
-                          image: message.image
+                          image: message.image.url
                 }
         end
       else

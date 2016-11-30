@@ -5,7 +5,7 @@ function message_html(data){
     var image = '<br><img src="' + data.image + '">';
   }
 
-  var message = $(
+  var message =
     "<li class='chatMessage'>" +
       "<div class= 'chatMessage__header'>" +
         "<p class= 'chatMessage__header__name'>" +
@@ -17,17 +17,16 @@ function message_html(data){
       "</div>" +
       "<p class='chatMessage__body'>" +
       data.body +
-      image +
       "</p>" +
+      image +
     "</li>"
-                );
 
     return message;
   };
 
 $(function(){
   $('#message_image').on('change', function(){
-    $(this).parents('form#new_message').submit();
+    $('form#new_message').submit();
   });
 
   $('form#new_message').submit(function(e) {
@@ -49,7 +48,7 @@ $(function(){
       $('#message_body').val('');
       $('#message_image').val('');
     })
-    .fail(function(json) {
+    .fail(function(data) {
     });
 
   });
