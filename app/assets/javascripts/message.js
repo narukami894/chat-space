@@ -25,6 +25,7 @@ function message_html(data){
   };
 
 $(function(){
+  setTimeout("location.reload()",5000);
   $('#message_image').on('change', function(){
     $('form#new_message').submit();
   });
