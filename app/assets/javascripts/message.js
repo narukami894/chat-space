@@ -1,6 +1,11 @@
 function message_html(data){
 
-  var message = $(
+  var image = '';
+  if (data.image) {
+    var image = '<br><img src="' + data.image + '">';
+  }
+
+  var message =
     "<li class='chatMessage'>" +
       "<div class= 'chatMessage__header'>" +
         "<p class= 'chatMessage__header__name'>" +
@@ -13,25 +18,35 @@ function message_html(data){
       "<p class='chatMessage__body'>" +
       data.body +
       "</p>" +
-    "</li>" );
+      image +
+    "</li>"
 
     return message;
   };
 
 $(function(){
+  $('#message_image').on('change', function(){
+    $('form#new_message').submit();
+  });
 
   $('form#new_message').submit(function(e) {
     e.preventDefault();
+
+    var sentmessage = new FormData($('form#new_message').get(0));
+
     $.ajax({
-      url: './messages',
+      url: './messages.json',
       type: 'POST',
-      data: { message: { body: $('#message_body').val() } },
+      data: sentmessage,
+      processData: false,
+      contentType: false,
       dataType: 'json'
     })
 
-    .done(function(data) {
-      $('.chatMessages').append(message_html(data));
+    .done(function(json) {
+      $('.chatMessages').append(message_html(json));
       $('#message_body').val('');
+      $('#message_image').val('');
     })
     .fail(function(data) {
     });

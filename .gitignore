@@ -13,3 +13,4 @@
 /tmp
 /vendor/bundle
 //th-mysql-config=
+/.env
