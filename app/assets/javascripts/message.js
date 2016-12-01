@@ -52,7 +52,7 @@ $(function(){
       $('#message_body').val('');
       $('#message_image').val('');
     })
-    .fail(function(data) {
+    .fail(function(json) {
     });
 
   });

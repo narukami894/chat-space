@@ -15,32 +15,6 @@
       text-align: center;
     }
 
-    &__errors {
-      margin: 30px 0;
-      padding: 20px 40px;
-      border: 1px solid #ddd;
-      border-radius: 2px;
-      text-align: center;
-
-      h2 {
-        margin-bottom: 10px;
-        color: #f05050;
-        font-size: 14px;
-      }
-
-      ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      li {
-        margin: 0;
-        padding: 0;
-        font-size: 13px;
-      }
-    }
-
     &__field {
       @include clearfix();
       margin-top: 30px;
@@ -58,11 +32,52 @@
             }
         }
 
-
         &--right {
           @include clearfix();
           float: right;
           width: 65%;
+
+            #searchResult {
+              line-height: 48px;
+              padding: 0 2px;
+            }
+
+            .searchResult {
+              @include clearfix();
+              border-bottom: 1px solid #ddd;
+              width: 100%;
+
+                &__name {
+                  @include clearfix();
+
+                }
+            }
+
+            &__users {
+
+                &__user {
+                  @include clearfix();
+                  line-height: 48px;
+                  list-style: none;
+                  padding: 0 2px;
+
+                    &__addbtn {
+                      display: inline-block;
+                      color: #38aef0;
+                      float: right;
+                      width: 10%;
+                      z-index: 7;
+                    }
+
+                    &__deletebtn {
+                      display: inline-block;
+                      color: #f05050;
+                      float: right;
+                      width: 10%;
+                      z-index: 7;
+                    }
+                }
+            }
 
             input {
               width: 100%;
@@ -77,7 +92,6 @@
             }
 
             &__btn {
-
                 input {
                   background-color: #38aef0;
                   border: 0;
@@ -86,32 +100,6 @@
                   height: 50px;
                   padding: 0 20px;
                   width: 80px;
-                }
-            }
-
-            .chat-group-user {
-              @include clearfix();
-              border-bottom: 1px solid #ddd;
-              padding: 0 15px;
-              line-height: 50px;
-              font-size: 14px;
-
-                &__name {
-                  float: left;
-                }
-
-                &__btn {
-                  float: right;
-                  display: inline-block;
-                  cursor: pointer;
-
-                    &--add {
-                      color: #38aef0;
-                    }
-
-                    &--remove {
-                      color: #f05050;
-                    }
                 }
             }
         }
