@@ -5,12 +5,12 @@
       .chatGroupForm__field--left
         = f.label :title, "グループ名"
       .chatGroupForm__field--right
-        = f.text_field :title, placeholder: "グループ名を入力してください", row:1, requied: "true"
+        = f.text_field :title, placeholder: "グループ名を入力してください", row: 1, requied: "true"
     .chatGroupForm__field
       .chatGroupForm__field--left
         = f.label "チャットメンバー追加"
       .chatGroupForm__field--right
-        = f.text_field :users, placeholder: "追加したいユーザー名を入力してください", row:1, requied: "true", value:''
+        = f.text_field :users, placeholder: "追加したいユーザー名を入力してください", row: 1, requied: "true", value: ''
         #searchResult
     .chatGroupForm__field
       .chatGroupForm__field--left
@@ -19,7 +19,7 @@
         %ul.chatGroupForm__field--right__users
           %li.chatGroupForm__field--right__users__user
             = current_user.name
-            %input{ type: "hidden", name: "group[user_ids][]", value: current_user.id }
+            = hidden_field_tag "group[user_ids][]", current_user.id
     .chatGroupForm__field
       .chatGroupForm__field--right
         .chatGroupForm__field--right__btn
