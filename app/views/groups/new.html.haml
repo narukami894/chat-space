@@ -18,8 +18,9 @@
         = f.label "チャットメンバー"
       .chatGroupForm__field--right
         %ul.chatGroupForm__field--right__users
-          %li.chatGroupForm__field--right__users__user{ id: "#{}" }
+          %li.chatGroupForm__field--right__users__user
             / hiddenかなんかでユーザのIDいれる
+
             = current_user.name
             / 追加したユーザー、削除ボタン
     .chatGroupForm__field
