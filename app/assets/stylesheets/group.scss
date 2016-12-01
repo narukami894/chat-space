@@ -51,6 +51,17 @@
                 &__name {
                   @include clearfix();
 
+                }
+            }
+
+            &__users {
+
+                &__user {
+                  @include clearfix();
+                  line-height: 48px;
+                  list-style: none;
+                  padding: 0 2px;
+
                     &__addbtn {
                       display: inline-block;
                       color: #38aef0;
@@ -66,17 +77,6 @@
                       width: 10%;
                       z-index: 7;
                     }
-                }
-            }
-
-            &__users {
-
-                &__user {
-                  @include clearfix();
-                  line-height: 48px;
-                  padding: 0 2px;
-
-
                 }
             }
 

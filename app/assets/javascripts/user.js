@@ -1,68 +1,76 @@
 function result_html(data){
 
-  var result =
-                "<div class='searchResult'>" +
-                  "<p class='searchResult__name'>" +
+    var result =
+                  "<div class='searchResult'>" +
+                    "<li class='chatGroupForm__field--right__users__user' data-name='" +
                     data.name +
-                    "<a class='searchResult__name__addbtn' >" +
-                      "追加" +
-                    "</a>" +
-                  "</p>" +
-                "</div>"
+                    "'>" +
+                      data.name +
+                      "<a class='chatGroupForm__field--right__users__user__addbtn' >" +
+                        "追加" +
+                      "</a>" +
+                      "<input name='group[user_ids][]' type='hidden' data-id='" +
+                      data.id +
+                       "' value='" +
+                        data.id +
+                      "'>" +
+                    "</li>" +
+                  "</div>"
+    return result;
+  };
 
-  return result;
-};
+  function ajaxSearch() {
+    $.ajax({
+      url: '/users.json',
+      type: 'GET',
+      data: { name: $('#group_users').val() } ,
+      dataType: 'json'
+    })
+    .done(function(json){
+      json.forEach(function(data){
+        $('#searchResult').html(result_html(data));
 
-
-
-function ajaxSearch() {
-  $.ajax({
-    url: '/users.json',
-    type: 'GET',
-    data: { name: $('#group_users').val() } ,
-    dataType: 'json'
-  })
-  .done(function(json){
-    json.forEach(function(data){
-      $('#searchResult').html(result_html(data));
+      });
+    })
+    .fail(function(json){
     });
-  })
-  .fail(function(json){
-  });
+ };
+
+      function added_user_html(data_id, data_name){
+        var added_user =
+                    "<li class='chatGroupForm__field--right__users__user' data-name='" +
+                    data_name +
+                    "'>" +
+                      data_name +
+                      "<a class='chatGroupForm__field--right__users__user__deletebtn' >" +
+                        "削除" +
+                      "</a>" +
+                      "<input name='group[user_ids][]' type='hidden' data-id='" +
+                      data_id +
+                       "' value='" +
+                        data_id +
+                      "'>" +
+                    "</li>" +
+                  "</div>"
+      return added_user
 }
 
-
-
-
-
-$(function(json){
-
-
-
-
-
+$(function(){
 
   $('input#group_users').on('change keyup', ajaxSearch);
 
-  function adddeletebtn{
-    var deletebtn =
-                "<a class='searchResult__name__deletebtn'>" +
-                  "削除" +
-                "</a>"
-    return deletebtn;
-  }
+  $('#searchResult').on('click', '.chatGroupForm__field--right__users__user__addbtn', function(){
 
+    var $this = $(this);
+    var data_id = $this.siblings().data("id");
+    var data_name = $this.parent().data("name");
 
-  $('#searchResult').on('click', '.searchResult__name__addbtn', function() {
-    $(this).parent('.searchResult__name').remove();
-    $('.chatGroupForm__field--right__users__user').append($(this));
-
+    $(this).parent('.chatGroupForm__field--right__users__user').remove();
+    $('.chatGroupForm__field--right__users').append(added_user_html(data_id, data_name));
   });
 
-  $('.searchResult__name__deletebtn').on('click', '', function(){
-    $(this).parent().remove();
+  $('.chatGroupForm__field--right__users').on('click', '.chatGroupForm__field--right__users__user__deletebtn', function(){
+    $(this).parent('.chatGroupForm__field--right__users__user').remove();
   });
-
-
 
 });
