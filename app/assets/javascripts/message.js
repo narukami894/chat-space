@@ -26,8 +26,8 @@ function message_html(data){
 
 $(function(){
 
-  var relordSeconds = 5000;
-  setTimeout("location.reload()", relordSeconds);
+  // var relordSeconds = 5000;
+  // setTimeout("location.reload()", relordSeconds);
 
   $('#message_image').on('change', function(){
     $('form#new_message').submit();
